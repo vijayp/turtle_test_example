@@ -1,0 +1,2 @@
+Run tests by activating conda environment from the yml file then running 
+./shapes_test.py.
