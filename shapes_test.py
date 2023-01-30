@@ -12,6 +12,7 @@ import inspect
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF, renderPM
 
+CANVAS_SIZE = (500,500)
 
 class TestShapes(unittest.TestCase):
     def _compare_canvas_to_expected(self, expected_filename, override_tmpdir=None):
@@ -41,7 +42,7 @@ class TestShapes(unittest.TestCase):
 
     def setUp(self):
         # this is run before every test
-        self._turtle = svg_turtle.SvgTurtle(500, 500)
+        self._turtle = svg_turtle.SvgTurtle(*CANVAS_SIZE)
 
     def test_circle(self):
         shapes.draw_circle(self._turtle, 20, 20, 20)
